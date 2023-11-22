@@ -1,0 +1,187 @@
+@charset "UTF-8";
+@import "reset.css";
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css");
+body {
+	padding: 0px;
+	margin: 0px;
+	/*background-color: #edc8ff;*/
+	overflow-x: hidden;
+	font-family: 'NanumSquareAceb';
+}
+
+video {
+	width: 100%; position : fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1;
+	position: fixed;
+}
+
+div {
+	padding: 20px;
+}
+
+#containerMain {
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-areas: 
+	"header header header" 
+	"article article article"
+	"footer footer footer";
+	grid-template-rows: 50px 1fr 110px;
+	grid-template-columns: 1fr;
+	grid-gap: 10px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#pageHeader {
+	padding-top: 0px;
+	grid-area: header;
+	position: sticky;
+	top: 0; /* 헤더를 화면 상단에 고정시킴 */
+	z-index: 1; /* 다른 콘텐츠보다 앞에 표시하도록 설정 */
+	background-color: rgba(255, 255, 255, 0); /* 헤더 색상 투명하게 */
+	padding: 0px;
+	
+}
+
+#pageFooter {
+	grid-area: footer;
+	color: white;
+	background: #333;  /* fallback for old browsers */
+
+}
+
+#mainNav {
+	grid-area: nav;
+	border: 2px solid black;
+}
+
+#mainArticle {
+	grid-area: article;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px; /* 원하는 상단 마진 설정 */
+	margin-bottom: 0px; /* 원하는 하단 마진 설정 */
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	list-style-type: none;
+}
+
+.hbody {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	color: white;
+	align-items: center;
+	background-color: white;
+	justify-content: center;
+	border-bottom: 1px solid #bfbfbf;
+}
+
+#menu li {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+  }
+
+  #menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 70%;
+    background-color: #ccc;
+  }
+#menu {
+		display: flex;
+		justify-content: space-around;
+		gap: 10px;
+	}
+	#menu>li {
+		font-size: 15px;
+		color: black;
+	}
+	.menu_item1 {
+		width: 100px;
+		text-align: center;
+	}
+	.menu_item_space {
+		width: 50px;
+	}
+	.menu_item2 {
+		width: 100px;
+		text-align: right;
+		margin-left: 100px;
+	}
+@media screen and (min-width: 625px) {
+	
+}
+
+@media screen and (max-width: 625px) {
+	.nav {
+		padding: 30px 40px;
+	}
+	#menu {
+		display: none;
+	}
+}
+
+p {
+	margin: 0px;
+}
+
+
+.content_p{
+	margin-bottom: 10px;
+	padding: 0px;
+}
+
+.title-li {
+  position: relative;
+}
+
+.hidden-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none; /* 초기에는 div를 숨김 */
+}
+
+.title-li:hover .hidden-div {
+	
+  display: block; /* hover 시 div를 보이도록 함 */
+}
+
+.textContainer {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  }
+  
+.moveText {
+  font-weight: 100;
+  font-size: 28px;
+  color: black;
+  }
+.dud {
+  color: #757575;
+}

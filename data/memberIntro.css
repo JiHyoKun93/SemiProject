@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css");
+
+
+.slider{width: 100%}
+.slider input{display: none;}
+.testimonials{
+	position: relative;
+    min-height: 500px;
+    perspective: 1000px;
+}
+.testimonials .item{
+	width: 500px;
+	padding: 100px;
+	border-radius: 5px;
+	background-color: #1D1A1E;
+	position: absolute;
+	border:5px solid #4E11F4;
+	top: 0;
+	box-sizing: border-box;
+	text-align: center;
+	transition: transform 0.4s;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	user-select: none;
+	cursor: pointer;
+}
+.testimonials .item h1{font-size: 114px; color: white;}
+.dots{display: flex; justify-content: center;align-items: center;}
+.dots label{
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #413B52;
+	margin: 7px;
+	transition-duration: 0.2s;
+}
+#t-1:checked ~ .dots label[for="t-1"],
+#t-2:checked ~ .dots label[for="t-2"],
+#t-3:checked ~ .dots label[for="t-3"],
+#t-4:checked ~ .dots label[for="t-4"],
+#t-5:checked ~ .dots label[for="t-5"],
+#t-6:checked ~ .dots label[for="t-6"]{
+	transform: scale(2);
+	background-color: #4E11F4;
+	box-shadow: 0px 0px 0px 3px #dddddd24;
+}
+
+#t-1:checked ~ .dots label[for="t-2"],
+#t-2:checked ~ .dots label[for="t-1"],
+#t-2:checked ~ .dots label[for="t-3"],
+#t-3:checked ~ .dots label[for="t-2"],
+#t-3:checked ~ .dots label[for="t-4"],
+#t-4:checked ~ .dots label[for="t-3"],
+#t-4:checked ~ .dots label[for="t-5"],
+#t-5:checked ~ .dots label[for="t-4"],
+#t-5:checked ~ .dots label[for="t-6"],
+#t-6:checked ~ .dots label[for="t-5"]{
+	transform: scale(1.5);
+}
+
+#t-1:checked ~ .testimonials label[for="t-3"],
+#t-2:checked ~ .testimonials label[for="t-4"],
+#t-3:checked ~ .testimonials label[for="t-5"],
+#t-4:checked ~ .testimonials label[for="t-6"],
+#t-5:checked ~ .testimonials label[for="t-1"],
+#t-6:checked ~ .testimonials label[for="t-2"]{
+	transform: translate3d(600px, 0, -180px) rotateY(-25deg);
+	z-index: 2;
+}
+
+#t-1:checked ~ .testimonials label[for="t-2"],
+#t-2:checked ~ .testimonials label[for="t-3"],
+#t-3:checked ~ .testimonials label[for="t-4"],
+#t-4:checked ~ .testimonials label[for="t-5"],
+#t-5:checked ~ .testimonials label[for="t-6"],
+#t-6:checked ~ .testimonials label[for="t-1"]{
+	transform: translate3d(300px, 0, -90px) rotateY(-15deg);
+	z-index: 3;
+}
+
+#t-2:checked ~ .testimonials label[for="t-1"],
+#t-3:checked ~ .testimonials label[for="t-2"],
+#t-4:checked ~ .testimonials label[for="t-3"],
+#t-5:checked ~ .testimonials label[for="t-4"],
+#t-6:checked ~ .testimonials label[for="t-5"],
+#t-1:checked ~ .testimonials label[for="t-6"]{
+	transform: translate3d(-300px, 0, -90px) rotateY(15deg);
+	z-index: 3;
+}
+
+#t-3:checked ~ .testimonials label[for="t-1"],
+#t-4:checked ~ .testimonials label[for="t-2"],
+#t-5:checked ~ .testimonials label[for="t-3"],
+#t-6:checked ~ .testimonials label[for="t-4"],
+#t-2:checked ~ .testimonials label[for="t-6"],
+#t-1:checked ~ .testimonials label[for="t-5"]{
+	transform: translate3d(-600px, 0, -180px) rotateY(25deg);
+	
+}
+
+#t-1:checked ~ .testimonials label[for="t-1"],
+#t-2:checked ~ .testimonials label[for="t-2"],
+#t-3:checked ~ .testimonials label[for="t-3"],
+#t-4:checked ~ .testimonials label[for="t-4"],
+#t-5:checked ~ .testimonials label[for="t-5"],
+#t-6:checked ~ .testimonials label[for="t-5"],
+#t-6:checked ~ .testimonials label[for="t-6"]{
+	
+	z-index: 4;
+}
+body {
+	padding: 0px;
+	margin: 0px;
+	/*background-color: #edc8ff;*/
+}
+
+video {
+	width: 100%; position : fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1;
+	position: fixed;
+}
+
+div {
+	padding: 20px;
+}
+
+/* ----------------------yj------------------------ */
+
+/* 버튼 */
+.custom-btn {
+	font-size: 10px;
+  zoom: 1.2;
+  width: 61px;
+  height: 20px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-1 {
+  background: rgb(141, 141, 148);
+  background: linear-gradient(0deg, rgba(141, 141, 148) 0%, rgba(141, 141, 148) 100%);
+  border: none;
+  padding: 0px;
+  text-align: center;
+}
+.btn-1:hover {
+   background: rgb(141, 141, 148);
+	background: linear-gradient(0deg, rgba(223 214 255) 0%, rgba(141, 141, 148) 100%);
+}
+
+
+/* 버튼2 */
+.custom-btn2 {
+	font-size: 10px;
+  zoom: 1.5;
+  width: 46px;
+  height: 19px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-2 {
+  background: rgb(141, 141, 148);
+  background: linear-gradient(0deg, rgba(141, 141, 148) 0%, rgba(141, 141, 148) 100%);
+  border: none;
+  padding: 0px;
+  text-align: center;
+}
+.btn-2:hover {
+   background: rgb(141, 141, 148);
+	background: linear-gradient(0deg, rgba(223 214 255) 0%, rgba(141, 141, 148) 100%);
+}
+
+/* 날짜 */
+input[type='date']::before {
+  content: attr(data-placeholder);
+  width: 100%;
+}
+
+/* 소개 */
+#myDiv {
+  transform: rotateY(150deg);
+}
+   
+body {
+  perspective: 1000px;
+}

@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+@import "reset.css";
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css");
+
+body {
+	overflow-x: hidden;
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+	/*background-color: #edc8ff;*/
+	font-family: NanumSquareAceb;
+}
+
+ol, ul {
+    margin: 0px;
+}
+.link{
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.3s ease-in-out;
+}
+
+.hidden {
+  top: -100px; /* 헤더를 숨길 위치 */
+}
+
+/**/
+
+/* 헤더 부분 */
+.hbody {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	color: white;
+	align-items: center;
+	background-color: white;
+	justify-content: center;
+	
+}
+
+#menu li {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+  }
+
+  #menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 70%;
+    background-color: #ccc;
+  }
+#menu>li {
+		font-size: 15px;
+		color: black;
+	}
+	.menu_item1 {
+		width: 100px;
+		text-align: center;
+	}
+	.menu_item_space {
+		width: 50px;
+	}
+	.menu_item2 {
+		width: 100px;
+		text-align: left;
+   		 margin: 0px;
+	}
+	.menu_item3{
+    	width: 200px;
+    	text-align: right;
+    	margin: 0px;
+	}
+a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	list-style-type: none;
+}
+
+#menu {
+		display: flex;
+		justify-content: space-around;
+		gap: 10px;
+		list-style: none;
+	}
+	#menu>li {
+		font-size: 15px;
+		color: black;
+	}
+	.menu_item1 {
+		width: 100px;
+		text-align: center;
+	}
+	.menu_item_space {
+		width: 50px;
+	}
+	.menu_item2 {
+		width: 100px;
+		text-align: left;
+   		 margin: 0px;
+	}
+	.menu_item3{
+    	width: 200px;
+    	text-align: right;
+    	margin: 0px;
+	}
+p {
+	margin: 0px;
+}
+
+.title-li {
+  position: relative;
+}
+
+.hidden-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none; /* 초기에는 div를 숨김 */
+}
+
+.title-li:hover .hidden-div {
+  display: block; /* hover 시 div를 보이도록 함 */
+}
+
+.text {
+  font-weight: 100;
+  font-size: 28px;
+  color: #FAFAFA;
+}
+.dud{
+  color: #757575;
+}
+
+.console-container {
+ 
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+	padding-top: 100px;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
+}
+
+/* 기존 style태그 안에 있던것들*/
+
+
+
+.moveText {
+	padding-top: 60%;
+}
+
+#menu {
+	display: flex;
+	justify-content: space-around;
+	gap: 10px;
+	list-style: none;
+	margin: auto;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+/* scroll */
+.scroll-downs {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0px;
+	width: 34px;
+	height: 55px;
+	margin-top: 35%;
+	margin-left: 50%;
+}
+
+.mousey {
+	width: 3px;
+	padding: 10px 15px;
+	height: 35px;
+	border: 2px solid white;
+	border-radius: 25px;
+	opacity: 0.75;
+	box-sizing: content-box;
+}
+
+.scroller {
+	width: 3px;
+	height: 10px;
+	border-radius: 25%;
+	background-color: white;
+	animation-name: scroll;
+	animation-duration: 2.2s;
+	animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+	animation-iteration-count: infinite;
+	color: white;
+}
+
+.scroller-text{
+	margin-left: 30px;
+ }
+
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}

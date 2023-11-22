@@ -1,0 +1,409 @@
+@charset "UTF-8";
+
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css");
+
+body {
+	padding: 0px;
+	margin: 0px;
+	/*background-color: #edc8ff;*/
+}
+
+video {
+	width: 100%; position : fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1;
+	position: fixed;
+}
+
+
+#pageHeader {
+	padding-top: 0px;
+	grid-area: header;
+	position: sticky;
+	top: 0; /* 헤더를 화면 상단에 고정시킴 */
+	z-index: 1; /* 다른 콘텐츠보다 앞에 표시하도록 설정 */
+	background-color: rgba(255, 255, 255, 0); /* 헤더 색상 투명하게 */
+	padding: 0px;
+}
+
+#pageFooter {
+	grid-area: footer;
+	background-color: #333;
+	color: white;
+}
+
+#mainNav {
+	grid-area: nav;
+}
+
+#mainArticle {
+	grid-area: article;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px; /* 원하는 상단 마진 설정 */
+	margin-bottom: 0px; /* 원하는 하단 마진 설정 */
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	list-style-type: none;
+}
+
+.hbody {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	color: white;
+	align-items: center;
+	background-color: white;
+	justify-content: center;
+}
+
+@media screen and (min-width: 625px) {
+	#menu {
+		display: flex;
+		justify-content: space-around;
+		gap: 10px;
+	}
+	#menu>li {
+		font-size: 15px;
+		color: black;
+	}
+	.menu_item1 {
+		width: 100px;
+		text-align: center;
+	}
+	.menu_item_space {
+		width: 50px;
+	}
+	.menu_item2 {
+		width: 100px;
+		text-align: right;
+	}
+}
+
+@media screen and (max-width: 625px) {
+	.nav {
+		padding: 30px 40px;
+	}
+	#menu {
+		display: none;
+	}
+}
+
+p {
+	margin: auto;
+	padding-left: 3%;
+}
+
+
+.content_p{
+	margin-bottom: 10px;
+	padding: 0px;
+}
+
+.title-li {
+  position: relative;
+}
+
+.hidden-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none; /* 초기에는 div를 숨김 */
+}
+
+.title-li:hover .hidden-div {
+	
+  display: block; /* hover 시 div를 보이도록 함 */
+}
+
+.textContainer {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  }
+  
+.moveText {
+  font-weight: 100;
+  font-size: 28px;
+  color: black;
+  }
+.dud {
+  color: #757575;
+}
+
+.boardbutton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #AB65DE;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: 'NanumSquareBold';
+}
+
+.boardbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color: white;
+}
+
+.boardbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.boardbutton:hover span {
+  padding-right: 25px;
+}
+
+.boardbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  font-size: 13pt;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  text-align: center;
+  display: inline-block; /* inline 요소를 block 요소처럼 배치하여 가로 정렬 */
+}
+
+.pagination a.active {
+  background-color: #AB65DE;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.accordion-btn {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 6px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+  font-weight: bold;
+  border: 1;
+  border-width: thin;
+  border-color: #e8e8e8;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-top-style: hidden;
+  
+}
+
+.accordion-active, .accordion-btn:hover {
+  background-color: #f9f9f9;
+  color: #a800f0;
+}
+
+.accordion-btn:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion-active:after {
+  content: "\2212";
+}
+
+.panel-content {
+  width: 100%;
+  padding: 0 50px;
+  background-color: #f4f4f4;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-size: 14pt;
+}
+
+.pc-onlys-block {
+    display: block;
+    position: relative;
+    color: #a0a0a0;
+    font-size: 11pt;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.notice {
+	
+}
+
+.page-title {
+  background-color: white;
+  font-family: 'NanumSquareExtraBold';
+}
+.page-title h3 {
+  font-size: 36px;
+  color: black;
+  font-weight: 400;
+  text-align: center;
+}
+
+#board-search .search-window {
+  padding: 30px 0;
+  background-color: white;
+}
+#board-search .search-window .search-wrap {
+  position: relative;
+/*   padding-right: 124px; */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 564px;
+  padding: 0;
+}
+#board-search .search-window .search-wrap input {
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  padding: 7px 14px;
+  border: 1px solid #ccc;
+}
+#board-search .search-window .search-wrap input:focus {
+  border-color: #a800f0;
+  outline: 0;
+  border-width: 3px;
+}
+#board-search .search-window .search-wrap .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 108px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.board-table {
+  font-size: 13px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.board-table a {
+  color: #333;
+  display: inline-block;
+  line-height: 1.4;
+  word-break: break-all;
+  vertical-align: middle;
+}
+.board-table a:hover {
+  text-decoration: underline;
+}
+.board-table th {
+  text-align: center;
+}
+
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+
+
+/* reset */
+
+* {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#lists{
+margin: auto;
+width: 70%;
+}
+
+#footer{
+margin: auto;
+width: 50%;
+text-align: center;
+clear:both;
+height:32px;
+line-height:32px;
+margin-top:5px;
+}
+
+.pagination-style-three a {
+padding: 5px 15px; 
+background: #ffffff; 
+color: black; 
+border-radius: 25px; 
+box-shadow: 0px 5px 10px 0px rgba(0,0,0,.1);
+font-weight: bolder;
+}
+
+.pagination-style-three a.selected {
+	background-color: #AB65DE;
+	color: white;
+}
+.pagination-style-three a:hover {
+	color: #a800f0;
+}
+.pagination-style-three a:active
+.pagination-style-three a:focus {
+background: #a800f0;
+color: white;  
+}
+
+
+  
+  
+  
+  
+  
